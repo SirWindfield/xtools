@@ -1,4 +1,9 @@
 # xtools
+
+[![Maintenance](https://img.shields.io/badge/maintenance-actively%20maintained-brightgreen.svg)](https://github.com/SirWindfield/xtools)
+[![crates.io](https://img.shields.io/crates/v/xtools.svg)](https://crates.io/crates/xtools)
+[![crates.io](https://img.shields.io/crates/d/xtools)](https://crates.io/crates/xtools)
+[![Documentation](https://docs.rs/xtools/badge.svg)](https://docs.rs/xtools)
 [![docs_master_badge]][docs_master_url]
 
 > Git hooks written in Rust and delivered as a git submodule.
