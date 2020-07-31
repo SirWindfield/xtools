@@ -1,5 +1,6 @@
 [package]
 name = "xtools"
+description = "A binary used for cross-platform git hooks."
 version = "0.0.0"
 homepage = "https://github.com/SirWindfield/xtools"
 license = "MIT OR Apache-2.0"
