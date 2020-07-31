@@ -1,29 +1,31 @@
-# zerotask-rust-lib-template
-
+# xtools
 [![docs_master_badge]][docs_master_url]
 
-> A GitHub template for Rust libraries.
+> Git hooks written in Rust and delivered as a git submodule.
+
+## Usage
+
+Usually, I add the binary as a workspace member to a project of mine. You can register it as a git submodule as well, allowing you to keep the local copy up-to-date with the remote version. You can then setup an alias inside your `.cargo/config` folder:
+```toml
+xtools = "run --package xtools --bin xtools --"
+```
+This allows you to run the utility binary using `cargo xtools`.
 
 ## Features
 
-- Continuous Integration through GitHub Actions
-  - Each PR is tested by running the following commands to ensure that only working code is added to the repository:
-    - `cargo fmt` to ensure uniform source code formatting.
-    - `cargo clippy` to use more idiomic Rust code, optimize code as well as prevent hard to spot bugs.
-    - `cargo check` to ensure that the library compiles properly.
-    - `cargo test` to ensure that the library works as expected.
-  - Each push to master triggers the following:
-    - Generation of the newest documentation that gets pushed to the `gh-pages` branch.
-- MSRV (**M**inimal **s**upported **R**ust **v**ersion)
-  - Kept in sync with the latest available Rust version on Ubuntu.
-- Opinioded `rustfmt` configuration file.
-- Misc
-  - `.editorconfig` file for code-unrelated files.
-    - Ensures proper formatting for workflow files and other configuration files.
+`xtools` provides some utility binaries that can be used to create custom git hooks. Here is a (non-exhaustive) list:
+- git:
+  - check for clean workspace flow
+  - various hooks, for example `pre-commit` that checks that `cargo clippy && cargo fmt -- --check` succeed without errors.
+- rust:
+  - clippy flow
+  - rustfmt flow
+  
+To modify the git hooks and run custom flows, you can simply modify the source code. The hooks get compiled alongside your Rust project, which creates a natural development environment for your git hooks.  
 
 ## Current Properties
 
-- MSRV: 1.41.0
+- MSRV: 1.41.0 (tested)
 
 ## License
 
